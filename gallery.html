@@ -70,7 +70,7 @@
   </footer>
 
   <div id="lightbox-overlay">
-    <button id="lightbox-close" class="lightbox-close">×</button>
+    <button id="lightbox-close" class="lightbox-close">x</button>
     <button id="lightbox-prev" class="lightbox-arrow">&#10094;</button>
     <img id="lightbox-image" src="" alt="Full Size">
     <button id="lightbox-next" class="lightbox-arrow">&#10095;</button>
@@ -96,6 +96,22 @@
         currentIndex = index;
       }
     }
+
+    // Scroll to section after full page load and layout stability
+    window.addEventListener('load', () => {
+      const targetId = localStorage.getItem('scrollToProject');
+      if (targetId) {
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+            localStorage.removeItem('scrollToProject');
+          }, 100);
+        });
+      }
+    });
 
     lightboxLinks.forEach((link, index) => {
       link.addEventListener('click', e => {
@@ -128,5 +144,5 @@
       lightboxImage.src = '';
     });
   </script>
-</body>
+  </body>
 </html>

@@ -124,7 +124,7 @@
 
       const newImage = link.getAttribute('data-image');
       const projectName = link.textContent.trim();
-      selectedAnchor = projectName.toLowerCase().replace(/\s+/g, '-');
+      selectedAnchor = projectName.replace(/^[0-9]+\s*/, '').toLowerCase().replace(/\s+/g, '-');
 
       const style = document.createElement('style');
       style.innerHTML = `
@@ -138,11 +138,6 @@
       heroContent.style.display = 'none';
       projectTitle.textContent = projectName;
 
-      viewProjectBtn.onclick = () => {
-        localStorage.setItem('scrollToProject', selectedAnchor);
-        window.location.href = 'gallery.html';
-      };
-
       gsap.fromTo(projectInfo, 
         { opacity: 0, y: 50, pointerEvents: 'none' }, 
         { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", pointerEvents: 'auto' }
@@ -150,16 +145,20 @@
     });
   });
 
-  // Mobile menu toggle
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.overlay-menu').classList.toggle('active');
+  // ✅ Attach this once, outside the loop
+  viewProjectBtn.addEventListener('click', () => {
+    if (selectedAnchor) {
+      window.location.href = `gallery.html#${selectedAnchor}`;
+    } else {
+      alert("Please select a project first.");
+    }
   });
-  
+
+  // Mobile menu toggle
   document.querySelector('.menu-toggle').addEventListener('click', function () {
     document.querySelector('.overlay-menu').classList.toggle('active');
   });
 </script>
-
 </body>
 </html>
 
