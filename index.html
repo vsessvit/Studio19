@@ -153,15 +153,6 @@
     });
   });
 
-  // ✅ Attach this once, outside the loop
-  viewProjectBtn.addEventListener('click', () => {
-    if (selectedAnchor) {
-      window.location.href = `gallery.html#${selectedAnchor}`;
-    } else {
-      alert("Please select a project first.");
-    }
-  });
-
   // Mobile menu toggle
   document.querySelector('.menu-toggle').addEventListener('click', function () {
     document.querySelector('.overlay-menu').classList.toggle('active');
