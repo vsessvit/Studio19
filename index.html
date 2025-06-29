@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Studio19 — Creative Design Studio</title>
   <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css" />
@@ -15,6 +15,19 @@
 </head>
 <body>
 
+  <header class="header">
+  <div class="logo">
+    <img src="path/to/logo.png" alt="Studio19 Logo">
+  </div>
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    ☰
+  </button>
+  <nav class="nav-items">
+    <a href="#projects">Projects</a>
+    <a href="#services">Process & Services</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+</header>
   <!-- Navigation Bar -->
   <header class="navbar">
     <div class="navbar-brand">
@@ -134,6 +147,14 @@
         }
       `;
       document.head.appendChild(style);
+
+      document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-items');
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  });
 
       heroContent.style.display = 'none';
       projectTitle.textContent = projectName;

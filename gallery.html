@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Projects — Studio19</title>
   <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css" />
@@ -96,6 +96,14 @@
         currentIndex = index;
       }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-items');
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  });
 
     // Scroll to section after full page load and layout stability
     window.addEventListener('load', () => {

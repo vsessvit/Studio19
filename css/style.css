@@ -59,11 +59,22 @@ img {
   padding: 20px 30px;
 }
 
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
 .logo-img {
   height: 24px; /* Reduce from 32px to 24px or smaller */
-  max-width: 100%;
-  display: block;
+  max-width: 120px;
 }
+
+.nav-items {
+  display: none;
+}
+
 .logo-link {
   display: inline-block;
   text-decoration: none;
@@ -74,10 +85,88 @@ img {
   display: block;
 }
 
+.logo-imgm {
+  display: block;
+  max-width: 150px;
+  width: 100px;
+  height: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+.nav-items {
+  display: none;  /* Hide nav links by default */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #000;   /* or your background color */
+  width: 200px;       /* adjust width as needed */
+}
+.nav-items.open {
+  display: flex;
+}
+
+.nav-items a {
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-items {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.nav-items.open {
+  max-height: 500px; /* enough height to show all links */
+}
+
+/* On larger screens, show nav links horizontally */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-items {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background: none;
+  }
+
+  .nav-items a {
+    padding: 0 1rem;
+    color: #fff;
+  }
+}
+
 .menu-toggle {
   font-size: 2rem;
   cursor: pointer;
   color: #C2B280;
+}
+
+@media (min-width: 678px) {
+  .nav-items {
+     display: flex;
+     gap: 1rem;
+  }
 }
 
 /* Overlay Menu */
