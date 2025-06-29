@@ -115,6 +115,10 @@
     lightboxOverlay.style.display = 'none';
     lightboxImage.src = '';
   });
+  
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.overlay-menu').classList.toggle('active');
+  });
 </script>
 </body>
 </html>
