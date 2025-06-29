@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Studio19</title>
+  <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="navbar-brand">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/studio19_logo.png" alt="Studio19 Logo" class="logo-img">
+      </a>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="gallery.html">Projects</a></li>
+        <li><a href="process.html">Process & Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="modern-loft">
+    <h2 class="gallery-title">Modern Loft</h2>
+    <p class="gallery-description">A sleek, urban loft with industrial finishes and open-concept design.</p>
+    <div class="masonry-grid">
+      <div class="gallery-item"><a href="assets/images/Loft1.jpg" class="lightbox"><img src="assets/images/Loft1.jpg" alt="Modern Loft 1"></a></div>
+      <div class="gallery-item"><a href="assets/images/Loft2.jpg" class="lightbox"><img src="assets/images/Loft2.jpg" alt="Modern Loft 2"></a></div>
+      <div class="gallery-item"><a href="assets/images/Loft3.jpg" class="lightbox"><img src="assets/images/Loft3.jpg" alt="Modern Loft 3"></a></div>
+      <div class="gallery-item"><a href="assets/images/Loft4.jpg" class="lightbox"><img src="assets/images/Loft4.jpg" alt="Modern Loft 4"></a></div>
+      <div class="gallery-item"><a href="assets/images/Loft5.jpg" class="lightbox"><img src="assets/images/Loft5.jpg" alt="Modern Loft 5"></a></div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="studio-workplace">
+    <h2 class="gallery-title">Studio Workplace</h2>
+    <p class="gallery-description">A creative workspace designed for collaboration, light, and inspiration.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><a href="assets/images/StudioWorkspace1.jpg" class="lightbox"><img src="assets/images/StudioWorkspace1.jpg" alt="Studio Workplace 1"></a></div>
+      <div class="gallery-item"><a href="assets/images/StudioWorkspace2.jpg" class="lightbox"><img src="assets/images/StudioWorkspace2.jpg" alt="Studio Workplace 2"></a></div>
+      <div class="gallery-item"><a href="assets/images/StudioWorkspace3.1.jpg" class="lightbox"><img src="assets/images/StudioWorkspace3.1.jpg" alt="Studio Workplace 3"></a></div>
+      <div class="gallery-item"><a href="assets/images/StudioWorkspace4.jpg" class="lightbox"><img src="assets/images/StudioWorkspace4.jpg" alt="Studio Workplace 4"></a></div>
+      <div class="gallery-item"><a href="assets/images/StudioWorkspace5.jpg" class="lightbox"><img src="assets/images/StudioWorkspace5.jpg" alt="Studio Workplace 5"></a></div>
+      <div class="gallery-item"><a href="assets/images/StudioWorkspace6.jpg" class="lightbox"><img src="assets/images/StudioWorkspace6.jpg" alt="Studio Workplace 6"></a></div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="coffeeshop">
+    <h2 class="gallery-title">Coffeeshop</h2>
+    <p class="gallery-description">A cozy, modern café with warm tones and inviting textures.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><a href="assets/images/Coffeshop1.jpg" class="lightbox"><img src="assets/images/Coffeshop1.jpg" alt="Coffeeshop 1"></a></div>
+      <div class="gallery-item"><a href="assets/images/Coffeshop2.jpg" class="lightbox"><img src="assets/images/Coffeshop2.jpg" alt="Coffeeshop 2"></a></div>
+      <div class="gallery-item"><a href="assets/images/Coffeshop3.jpg" class="lightbox"><img src="assets/images/Coffeshop3.jpg" alt="Coffeeshop 3"></a></div>
+      <div class="gallery-item"><a href="assets/images/Coffeshop4.jpg" class="lightbox"><img src="assets/images/Coffeshop4.jpg" alt="Coffeeshop 4"></a></div>
+      <div class="gallery-item"><a href="assets/images/Coffeeshop6.jpg" class="lightbox"><img src="assets/images/Coffeeshop6.jpg" alt="Coffeeshop 6"></a></div>
+      <div class="gallery-item"><a href="assets/images/Coffeshop7.jpg" class="lightbox"><img src="assets/images/Coffeeshop7.jpg" alt="Coffeeshop 7"></a></div>
+    </div>
+  </section>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox-overlay">
+  <button id="lightbox-prev" class="lightbox-arrow">&#10094;</button>
+  <img id="lightbox-image" src="" alt="Full Size">
+  <button id="lightbox-next" class="lightbox-arrow">&#10095;</button>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Studio19. All rights reserved.</p>
+  </footer>
+
+  <script>
+  const lightboxLinks = Array.from(document.querySelectorAll('.lightbox'));
+  const lightboxOverlay = document.getElementById('lightbox-overlay');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const link = lightboxLinks[index];
+    if (link) {
+      lightboxImage.src = link.href;
+      lightboxOverlay.style.display = 'flex';
+      currentIndex = index;
+    }
+  }
+
+  lightboxLinks.forEach((link, index) => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      showImage(index);
+    });
+  });
+
+  prevBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    showImage((currentIndex - 1 + lightboxLinks.length) % lightboxLinks.length);
+  });
+
+  nextBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    showImage((currentIndex + 1) % lightboxLinks.length);
+  });
+
+  lightboxOverlay.addEventListener('click', () => {
+    lightboxOverlay.style.display = 'none';
+    lightboxImage.src = '';
+  });
+</script>
+</body>
+</html>

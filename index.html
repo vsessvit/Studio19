@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio19 — Creative Design Studio</title>
+  <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="navbar-brand">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/studio19_logo.png" alt="Studio19 Logo" class="logo-img">
+      </a>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="gallery.html">Projects</a></li>
+        <li><a href="process.html">Process & Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="overview" class="hero">
+    <div class="hero-content" id="hero-content">
+      <h1 class="hero-title">Studio19</h1>
+      <p class="hero-subtitle">We design bold and timeless spaces</p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="share">
+      <a href="https://www.behance.net" target="_blank" class="share__socnetwork">
+        <i-behance share__icon></i>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" class="share__socnetwork">
+        <i class="fa-brands fa-facebook share__icon"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="share__socnetwork">
+        <i class="fa-brands fa-instagram share__icon"></i>
+      </a>
+      <a href="https://pinterest.com" target="_blank" class="share__socnetwork">
+        <i class="fa-brands fa-pinterest share__icon"></i>
+      </a>
+    </div>
+
+    <!-- Project Links -->
+    <div class="project-links-hero">
+      <a href="#" class="project-link-hero" data-image="assets/images/pexels-wendywei-20337840.jpg"><span class="project-number">01</span> Modern Loft</a>
+      <a href="#" class="project-link-hero" data-image="assets/images/pexels-kindelmedia-7688089.jpg"><span class="project-number">02</span> Studio workplace</a>
+      <a href="#" class="project-link-hero" data-image="assets/images/CoffeeshopMain.jpg"><span class="project-number">03</span> Coffeeshop</a>
+    </div>
+
+    <!-- Project Info -->
+    <div class="project-info" id="project-info">
+      <h2 class="project-title" id="project-title"></h2>
+      <button class="view-project-btn" id="view-project-btn">View Project</button>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <h1 class="about-background-title">ABOUT</h1>
+    <div class="about-content">
+      <div class="about-column">
+        <p>We design every project as a one-off.</p>
+        <p>Studio19 is a creative design studio focused on timeless, bold, and context-driven spaces. Founded with a passion for detail and storytelling, we bring unique visions to life through architecture and interior design.</p>
+      </div>
+      <div class="about-column">
+        <p>Our work spans residential, commercial, and hospitality projects. We believe in listening deeply to our clients and crafting spaces that reflect their identity, values, and aspirations — with elegance and precision.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="design-fields">
+    <div class="design-field" data-image="commercial">
+      <h3>Commercial</h3>
+    </div>
+    <div class="design-field" data-image="residential">
+      <h3>Residential</h3>
+    </div>
+    <div class="design-field" data-image="architecture">
+      <h3>Architecture</h3>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@studio19.com">info@studio19.com</a></p>
+    <p>Phone: +1 234 567 890</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Studio19. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+  gsap.from(".hero-title", { opacity: 0, y: 50, duration: 1.2, ease: "power3.out" });
+  gsap.from(".hero-subtitle", { opacity: 0, y: 30, duration: 1.2, delay: 0.5, ease: "power3.out" });
+
+  const projectLinks = document.querySelectorAll('.project-link-hero');
+  const heroContent = document.getElementById('hero-content');
+  const projectInfo = document.getElementById('project-info');
+  const projectTitle = document.getElementById('project-title');
+  const viewProjectBtn = document.getElementById('view-project-btn');
+
+  let selectedAnchor = '';
+
+  projectLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const newImage = link.getAttribute('data-image');
+      const projectName = link.textContent.trim();
+      selectedAnchor = projectName.toLowerCase().replace(/\s+/g, '-');
+
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .hero::after {
+          background-image: url('${newImage}');
+          opacity: 1;
+        }
+      `;
+      document.head.appendChild(style);
+
+      heroContent.style.display = 'none';
+      projectTitle.textContent = projectName;
+
+      viewProjectBtn.onclick = () => {
+        localStorage.setItem('scrollToProject', selectedAnchor);
+        window.location.href = 'gallery.html';
+      };
+
+      gsap.fromTo(projectInfo, 
+        { opacity: 0, y: 50, pointerEvents: 'none' }, 
+        { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", pointerEvents: 'auto' }
+      );
+    });
+  });
+
+  // Mobile menu toggle
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.overlay-menu').classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
+
