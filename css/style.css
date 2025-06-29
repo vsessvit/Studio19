@@ -92,67 +92,9 @@ img {
   height: auto;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.menu-toggle {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: block;
-}
-
-.nav-items {
-  display: none;  /* Hide nav links by default */
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: #000;   /* or your background color */
-  width: 200px;       /* adjust width as needed */
-}
-.nav-items.open {
-  display: flex;
-}
-
-.nav-items a {
-  padding: 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-items {
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-  max-height: 0;
-}
-
-.nav-items.open {
-  max-height: 500px; /* enough height to show all links */
-}
-
-/* On larger screens, show nav links horizontally */
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .nav-items {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    width: auto;
-    background: none;
-  }
-
-  .nav-items a {
-    padding: 0 1rem;
-    color: #fff;
+@media (min-width: 480px) {
+  .logo-img{
+    max-width: 120;
   }
 }
 
