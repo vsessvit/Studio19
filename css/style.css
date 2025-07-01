@@ -447,15 +447,15 @@ img {
 }
 
 .design-field[data-image="commercial"] {
-  background-image: url('../assets/images/pexels-netoo-21345931.jpg');
+  background-image: url('../assets/images/Commercial.jpg');
 }
 
 .design-field[data-image="residential"] {
-  background-image: url('../assets/images/pexels-ekrulila-19050707.jpg');
+  background-image: url('../assets/images/Residential.jpg');
 }
 
 .design-field[data-image="architecture"] {
-  background-image: url('../assets/images/pexels-scottwebb-1022936.jpg');
+  background-image: url('../assets/images/Architecture.jpg');
 }
 
 .design-field:hover {
@@ -618,7 +618,7 @@ input[type="file"]::file-selector-button:hover {
   text-align: center;
   position: relative;
   z-index: 1;
-  background-image: url('../assets/images/pexels-golnar-sabzpoush-rashidi-1317651-3268386.jpg'); 
+  background-image: url('../assets/images/contact.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
