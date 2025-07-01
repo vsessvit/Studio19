@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Studio19 — Creative Design Studio</title>
   <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css" >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
     <!-- Social Media Links -->
     <div class="share">
       <a href="https://www.behance.net" target="_blank" class="share__socnetwork">
-        <i-behance share__icon></i>
+        <i class="i-behance share__icon"></i>
       </a>
       <a href="https://www.facebook.com" target="_blank" class="share__socnetwork">
         <i class="fa-brands fa-facebook share__icon"></i>
@@ -63,7 +63,7 @@
 
     <!-- Project Info -->
     <div class="project-info" id="project-info">
-      <h2 class="project-title" id="project-title"></h2>
+      <h2 class="project-title" id="project-title">Loading project...</h2>
       <button class="view-project-btn" id="view-project-btn">View Project</button>
     </div>
   </section>
@@ -81,17 +81,17 @@
     </div>
   </section>
 
-  <section class="design-fields">
-    <div class="design-field" data-image="commercial">
-      <h3>Commercial</h3>
-    </div>
-    <div class="design-field" data-image="residential">
-      <h3>Residential</h3>
-    </div>
-    <div class="design-field" data-image="architecture">
-      <h3>Architecture</h3>
-    </div>
-  </section>
+  <section class="design-fields" aria-label="Design Fields">
+  <div class="design-field" data-image="commercial" role="button" tabindex="0" aria-label="Commercial design field">
+    <h3>Commercial</h3>
+  </div>
+  <div class="design-field" data-image="residential" role="button" tabindex="0" aria-label="Residential design field">
+    <h3>Residential</h3>
+  </div>
+  <div class="design-field" data-image="architecture" role="button" tabindex="0" aria-label="Architecture design field">
+    <h3>Architecture</h3>
+  </div>
+</section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -152,12 +152,14 @@
       );
     });
   });
-
-  // Mobile menu toggle
-  document.querySelector('.menu-toggle').addEventListener('click', function () {
-    document.querySelector('.overlay-menu').classList.toggle('active');
+  
+viewProjectBtn.addEventListener('click', () => {
+    if (selectedAnchor) {
+      window.location.href = `gallery.html#${selectedAnchor}`;
+    } else {
+      alert("Please select a project first.");
+    }
   });
 </script>
 </body>
 </html>
-

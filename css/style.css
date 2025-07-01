@@ -146,7 +146,7 @@ img {
 .overlay-menu.active {
   visibility: visible;
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: all; /* instead of auto, cos got a worning in css validator */
 }
 
 .overlay-menu ul li {
@@ -1213,25 +1213,30 @@ input[type="file"]::file-selector-button:hover {
   }
 
   /* Project Links */
-  .project-links-hero {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 48px;
-    display: inline-block;
-    justify-content: right;
-    gap: 12px;
-    flex-wrap: wrap;
-    padding: 0 10px;
-    z-index: 2;
-  }
+.project-link-hero {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
 
-  .project-link-hero {
-    font-size: 0.8rem;
-    color: #ffffff;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-    white-space: nowrap;
-  }
+/* Add invisible padding using a pseudo-element */
+.project-link-hero::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  bottom: -12px;
+  left: -12px;
+  right: -12px;
+}
+
 
   .project-number {
     font-size: 0.5rem;

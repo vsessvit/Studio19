@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Studio19</title>
   <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
 
@@ -33,8 +33,8 @@
       <a href="assets/images/Loft1.jpg" class="lightbox" data-section="loft"><img src="assets/images/Loft1.jpg" alt="Loft 1"></a>
       <a href="assets/images/Loft2.jpg" class="lightbox" data-section="loft"><img src="assets/images/Loft2.jpg" alt="Loft 2"></a>
       <a href="assets/images/Loft3.jpg" class="lightbox" data-section="loft"><img src="assets/images/Loft3.jpg" alt="Loft 3"></a>
-	    <a href="assets/images/Loft3.jpg" class="lightbox" data-section="loft"><img src="assets/images/Loft4.jpg" alt="Loft 3"></a>
-	    <a href="assets/images/Loft3.jpg" class="lightbox" data-section="loft"><img src="assets/images/Loft5.jpg" alt="Loft 3"></a>
+	    <a href="assets/images/Loft4.jpg" class="lightbox" data-section="loft"><img src="assets/images/Loft4.jpg" alt="Loft 3"></a>
+	    <a href="assets/images/Loft5.jpg" class="lightbox" data-section="loft"><img src="assets/images/Loft5.jpg" alt="Loft 3"></a>
     </div>
   </section>
 
@@ -100,9 +100,6 @@
     document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-items');
-    toggleBtn.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
   });
 
     // Scroll to section after full page load and layout stability
@@ -151,6 +148,18 @@
       lightboxOverlay.style.display = 'none';
       lightboxImage.src = '';
     });
+    document.addEventListener('keydown', (e) => {
+  if (lightboxOverlay.style.display === 'flex') {
+    if (e.key === 'ArrowLeft') {
+      showImage((currentIndex - 1 + sectionLinks.length) % sectionLinks.length);
+    } else if (e.key === 'ArrowRight') {
+      showImage((currentIndex + 1) % sectionLinks.length);
+    } else if (e.key === 'Escape') {
+      lightboxOverlay.style.display = 'none';
+      lightboxImage.src = '';
+    }
+  }
+});
   </script>
   </body>
 </html>
