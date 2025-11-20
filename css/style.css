@@ -51,7 +51,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000; /* or any preferred dark color */
+  background-color: #000;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -67,7 +67,7 @@ img {
 }
 
 .logo-img {
-  height: 24px; /* Reduce from 32px to 24px or smaller */
+  height: 24px;
   max-width: 120px;
 }
 
@@ -81,7 +81,7 @@ img {
 }
 
 .logo-img {
-  height: 24px; /* Adjust as needed */
+  height: 24px;
   display: block;
 }
 
@@ -146,7 +146,7 @@ img {
 .overlay-menu.active {
   visibility: visible;
   opacity: 1;
-  pointer-events: all; /* instead of auto, cos got a worning in css validator */
+  pointer-events: all;
 }
 
 .overlay-menu ul li {
@@ -253,7 +253,7 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.875rem; /* ~14px */
+  font-size: 0.875rem;
   font-weight: 600;
   color: #ffffff;
   text-transform: uppercase;
@@ -289,9 +289,9 @@ img {
 
 .project-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem; /* smaller than before */
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #C2B280; /* same as Studio19 */
+  color: #C2B280;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 20px;
@@ -300,7 +300,7 @@ img {
 
 .view-project-btn {
   display: inline-block;
-  margin-left: 20px; /* pushes to the right */
+  margin-left: 20px;
   padding: 12px 28px;
   background-color: #C2B280;
   color: #121212;
@@ -355,9 +355,9 @@ img {
 }
 
 .about-background-title {
-  font-size: 12rem; /* was 8rem */
-  letter-spacing: 0.15em; /* wider spacing */
-  top: 40px; /* adjust vertical position if i'd like to */
+  font-size: 12rem;
+  letter-spacing: 0.15em;
+  top: 40px;
 }
 .about-column p {
   margin-bottom: 20px;
@@ -380,12 +380,12 @@ img {
 .about-column {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertically centers content */
+  justify-content: center;
   padding: 10px 0;
 }
 
 .about-content {
-  align-items: center; /* ensures both columns align vertically */
+  align-items: center;
 }
 
 .about-column {
@@ -429,12 +429,12 @@ img {
 }
 
 .design-field h3 {
-  background-color: transparent; /* no background */
-  padding: 0; /* remove spacing */
+  background-color: transparent;
+  padding: 0;
   border-radius: 0;
   font-size: 1.5rem;
   font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* optional: subtle shadow for readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .design-field::before {
@@ -656,7 +656,7 @@ input[type="file"]::file-selector-button:hover {
 .form-success-message {
   margin-top: 20px;
   font-size: 1rem;
-  color: #90ee90; /* light green */
+  color: #90ee90;
   display: none;
 }
 
@@ -868,7 +868,7 @@ input[type="file"]::file-selector-button:hover {
 
 .masonry-grid img,
 .gallery-grid img {
-    border-radius: 8px; /* or 0px for sharp corners */
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
@@ -955,7 +955,7 @@ input[type="file"]::file-selector-button:hover {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -1029,7 +1029,7 @@ input[type="file"]::file-selector-button:hover {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* opacity here */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -1259,18 +1259,6 @@ input[type="file"]::file-selector-button:hover {
   .about-section {
     padding: 60px 20px;
   }
-
-  /* Design Fields */
-  /* .design-fields {
-    flex-direction: row;
-    height: auto;
-  }
-
-  .design-field {
-    flex: 1;
-    height: auto;
-    min-width: 33.33%;
-  } */
 
   /* Contact Section */
   .contact,
