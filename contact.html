@@ -6,7 +6,7 @@
   <title>Contact Us — Studio19</title>
   <link rel="icon" href="assets/favicon/favicon.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" >
+  <link rel="stylesheet" href="assets/css/style.css" >
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,6 +18,7 @@
        <img src="assets/images/Studio19_logo.png" alt="Studio19 Logo" class="logo-img">
       </a>
     </div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <nav class="nav-links">
       <ul>
         <li><a href="gallery.html">Projects</a></li>
@@ -73,31 +74,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-  const form = document.getElementById('contactForm');
-  const successMessage = document.getElementById('formSuccess');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    if (!form.checkValidity()) {
-      event.stopPropagation();
-    } else {
-      successMessage.style.display = 'block';
-      form.reset();
-    }
-    form.classList.add('was-validated');
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav-items');
-
-    if (toggleBtn && nav) {
-      toggleBtn.addEventListener('click', () => {
-        nav.classList.toggle('open');
-      });
-    }
-  });
-</script>
+  <script src="assets/scripts/contact.js"></script>
 </body>
 </html>
