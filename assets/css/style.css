@@ -1191,11 +1191,6 @@ input[type="file"]::file-selector-button:hover {
     font-size: 0.5rem;
   }
 
-  .menu-toggle,
-  .overlay-menu {
-    display: none !important;
-  }
-
   /* Hero Section */
   .hero {
     background-size: cover;
