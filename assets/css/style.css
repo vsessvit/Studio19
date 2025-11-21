@@ -211,7 +211,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url('../images/MainBackground.jpg');
+  background-image: url('../images/MainBackground.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -488,15 +488,15 @@ img {
 }
 
 .design-field[data-image="commercial"] {
-  background-image: url('../images/Commercial.jpg');
+  background-image: url('../images/Commercial.webp');
 }
 
 .design-field[data-image="residential"] {
-  background-image: url('../images/Residential.jpg');
+  background-image: url('../images/Residential.webp');
 }
 
 .design-field[data-image="architecture"] {
-  background-image: url('../images/Architecture.jpg');
+  background-image: url('../images/Architecture.webp');
 }
 
 .design-field:hover {
@@ -664,7 +664,7 @@ input[type="file"]::file-selector-button:hover {
   text-align: center;
   position: relative;
   z-index: 1;
-    background-image: url('../images/Contact.jpg'); 
+    background-image: url('../images/Contact.webp'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
