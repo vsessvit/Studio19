@@ -216,7 +216,7 @@ The website was tested across key device resolutions using both Chrome DevTools 
 - **Apple iPhone 6s Plus / 7 Plus** (414 x 736): ✅ Large mobile layout
   ![iPhone 6s Plus / 7 Plus Testing](assets/images/testing/responsive/iphone-6s-plus-7-plus.png)
 - **Apple iPhone 15 Pro Max** (430 x 932): ✅ Latest iPhone experience *(Real device testing)*
-  ![iPhone 15 Pro Max Testing](assets/images/testing/responsive/iphone-15-pro-max.png)
+  ![iPhone 15 Pro Max Testing](assets/images/testing/responsive/iphone-15-pro-max.PNG)
 - **Samsung Galaxy S5/S6/S7** (360 x 640): ✅ Android layout compatible
   ![Samsung Galaxy S5/S6/S7 Testing](assets/images/testing/responsive/samsung-galaxy-s5-s6-s7.png)
 - **Google Pixel** (411 x 731): ✅ Google device optimized
