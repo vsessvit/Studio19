@@ -1059,7 +1059,7 @@ input[type="file"]::file-selector-button:hover {
 /* Bottom Section for Process Page */
 .process-cta-section {
   position: relative;
-  background-image: url('../images/ProcessBackgroundUP.jpg');
+  background-image: url('../images/ProcessBackgroundDOWN.webp');
   background-size: cover;
   background-position: center;
   height: 60vh;
