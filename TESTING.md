@@ -304,13 +304,13 @@ Comprehensive testing across major browsers and versions:
 | **Chrome Mobile** | Android | ✅ Perfect | ✅ Fast | Primary test browser |
 | **Safari Mobile** | iOS | ✅ Perfect | ✅ Fast | iOS-specific testing |
 | **Firefox Mobile** | Android | ✅ Good | ✅ Good | Minor CSS differences |
-
+| **Edge Mobile** | Android | ✅ Good | ✅ Good | Minor CSS differences |
 ### Mobile Browser Testing Screenshots
 
-![Chrome Mobile Testing](assets/images/testing/browsers/chrome-mobile.png)
-![Safari Mobile Testing](assets/images/testing/browsers/safari-mobile.png)
-![Firefox Mobile Testing](assets/images/testing/browsers/firefox-mobile.png)
-![Samsung Internet Testing](assets/images/testing/browsers/samsung-internet.png)
+![Chrome Mobile Testing](assets/images/testing/browsers/mobile-chrome.PNG)
+![Safari Mobile Testing](assets/images/testing/browsers/mobile-safari.PNG)
+![Firefox Mobile Testing](assets/images/testing/browsers/mobile-firefox.PNG)
+![Edge Mobile Testing](assets/images/testing/browsers/mobile-edge.PNG)
 
 #### Browser Compatibility Screenshots
 
